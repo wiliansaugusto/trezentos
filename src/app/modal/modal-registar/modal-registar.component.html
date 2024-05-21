@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Olá almaprestamista!</h2>
+<mat-dialog-content>
+  <p>Você resgatou mais um pouquinho de alma</p>
+  <ul >
+    <li *ngFor=" let item of data">Você pagou a parcela: {{item.parcela}} que é a do mês de <strong>{{item.vencimento}}</strong></li>
+  </ul>
+  <hr>
+  <p>Peço a gentileza que aguarde que um de nossos ceifadores em breve irão conferir o seu pagamento!</p>
+  <p>No exato momento estamos ocupados!</p>
+  <figure>
+    <img class="img-fluid img-thumbnail" src="../../../assets/morteCabeça.gif" alt="imagem morte trabalhando">
+    <figcaption>Até breve e Obrigado!</figcaption>
+  </figure>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-fab-button mat-dialog-close>Fechar</button>
+</mat-dialog-actions>

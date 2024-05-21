@@ -1,0 +1,35 @@
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--cor-principal);
+    
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: baseline;
+    padding: 5px;
+}
+li{
+    list-style: none;
+    margin-left: 10px;
+    flex-flow: row ;
+    justify-content: first baseline;
+    align-items: baseline; 
+}
+li img{
+    width: 25px;
+}
+.titulo{
+    color: aliceblue;
+}
+
+@media screen and (max-width: 500px) {
+    .nav{
+    flex-direction: column;    
+    }
+    
+}

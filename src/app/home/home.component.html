@@ -1,0 +1,48 @@
+<div class="body">
+    <div class="componente">
+        <h2 style="text-align: center;">Sejam bem vindos!!!</h2>
+        <p>Eu poderia me chamar também como Sistema Gerenciador de alma!!!</p>
+        <p>O inicio dos pagamentos se iniciam em setembro de 2024 e tem o prazo até janeiro de 2050, até o termino do
+            contrato, contando as parcelas pagas, Alexandre terá <strong>{{idades.ale}} anos</strong>, Cristina terá
+            <strong>{{idades.cristina}}
+                anos</strong>, Pedro terá <strong>{{idades.pedro}} anos</strong>, Thiago terá <strong>{{idades.thiago}}
+                anos</strong> Willians terá <strong>{{idades.willians}} invernos</strong> e Izadora
+            <strong>{{idades.iza}} anos</strong>.
+        </p>
+    </div>
+    <div class="componente">
+        <h2>Vamos lá</h2>
+        <img class="img-fluid img-thumbnail morteTela" src="../../assets/MorteTela.jpeg" alt="imagem da morte">
+        <p>Nessa tela você acompanhará a evolução dos pagamentos para o resgate da sua alma</p>
+    </div>
+    <div class="componente">
+        <h2>Registrar pagamento </h2>
+        <p>No link abaixo será possivel você resgistra um pagamento que será conferido por alguns de nosssos ceifadores
+        </p>
+        <button routerLink="registrar" class="btn btn-lg btnRegPeg"> <img src="../../assets/grim-reaper-death.gif"
+                alt="" class="img-fluid imgBtn"> Registrar pagamento</button>
+    </div>
+    <div class="componente">
+        <h2>Acompanhe o resgate da sua alma</h2>
+        <p>Você já pagou <strong>{{parcelasPagas}}</strong> parcelas </p>
+        <p>a proxima parcela vence mês <strong>{{currentMonth}}</strong>, até breve</p>
+        <p>Faltam somente <Strong>{{parcelasRestantes}}!</Strong></p>
+        <div class="imagensEvolucao">
+            <div class="bloco1" >
+                <div class="imagem-container">
+                    <img class="imagem-superior img-fluid img-thumbnail"
+                        [ngStyle]="{'background-size': porcentagem.replace(',','.')}" src="../../assets/SemTitulo-1.png"
+                        alt="">
+                </div>
+                <div class="text-container">
+                    <p ><strong>{{porcentagem}}</strong> de parcelas pagas</p>
+                </div>
+            </div>
+            <div class="bloco2">
+                <img class="img-fluid img-thumbnail" src="../../assets/grim-reaper.gif" alt="ceifador sorrindo">
+            </div>
+
+        </div>
+
+
+    </div>

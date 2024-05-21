@@ -1,0 +1,92 @@
+.body {
+    max-width: 100%;
+    min-height: 100vh;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 10px;
+    padding-left: 5px;
+    background-color: black;
+    color: aliceblue;
+}
+
+.componente {
+    padding: 10px;
+}
+
+h2 {
+    color: rgb(253, 8, 8);
+    font-size: 22px;
+    
+}
+
+.imgBtn {
+    height: 5rem
+}
+
+.btnRegPeg {
+    background-color: #fee600;
+    color: blue;
+}
+
+.btnRegPeg:hover,
+.btnRegPeg:active {
+    color: darkred;
+    cursor: pointer;
+}
+
+.imagensEvolucao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 15px;
+}
+
+.morteTela {
+    width: auto;
+    height: 100vh;
+}
+
+.imagem-container {
+    position: relative;
+    width: 300px;
+}
+
+.text-container {
+    position: relative;
+    top: 220px;
+    color: #fee600;
+}
+
+.imagem-superior {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-image: url("../../assets/bloodriver.gif");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    
+}
+
+
+@media screen and (max-width:500px) {
+
+    .morteTela {
+        width: 98vw;
+        height: auto;
+    }
+
+    .imagensEvolucao {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .text-container {
+        left: 15%;
+    }
+    .bloco2 {
+      margin-top: 220px;
+    }
+    .imagem-superior{
+        left: 15%;
+    }
+}

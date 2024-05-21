@@ -1,0 +1,40 @@
+<div *ngIf="loginSucesso[0].success == false" class="container corpo">
+    <div class="falhou">
+        <img class="img-fluid img-thumbnail" src="../../assets/angryceifador.gif" alt="">
+        <h2>VOCÊ NÃO É UM CEIFADOR!!!!</h2>
+        <h2 *ngIf="loginSucesso[0].nome ">SAIA JÁ DAQUI VOCÊ NÃO É {{loginSucesso[0].nome| uppercase}}</h2>
+        <h2 *ngIf="loginSucesso[0].nome == ''"> NÃO TENTE SER ESPERTO! </h2>
+        <button mat-fab routerLink="" class="btnHome"> HOME</button>
+    </div>
+</div>
+
+<div *ngIf="loginSucesso[0].success == true" class="container corpo">
+    <img src="" alt="vamos trabalhar">
+    <h2>Vamos Trabalhar, {{loginSucesso[0].nome | uppercase}}</h2>
+    <div>
+        <h4>Há  {{paraConferir.length}} parcelas para conferir</h4>
+        <button class="btn btn-lg btn-success" (click)="verificarTodas()">Verificado às {{paraConferir.length}}</button>
+
+    </div>
+    <br>
+    <ul>
+        <li *ngFor="let item of paraConferir">
+            <div class="card mb-4">
+                <div class="card-header">
+                    Parcela: {{item.parcela}}
+
+                </div>
+                <div class="card-body">
+                    <p><strong>Responsável:</strong> {{item.responsavel}}</p>
+                    <p><strong>Data do Vencimento:</strong> {{item.vencimento}}</p>
+                    <p><strong>Data do Pagamento:</strong> {{item.dataPagamento}}</p>
+                    
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-lg btn-success" (click)="verificarUM(item)">Verificado</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+    
+</div>

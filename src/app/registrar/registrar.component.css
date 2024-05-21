@@ -1,0 +1,32 @@
+.corpo {
+  min-height: 95vh;
+  max-width: 98vw;
+}
+
+.mt {
+  margin-top: 25px;
+  padding: 15px;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 25%;
+}
+
+.titulo {
+  background-color: black;
+  color: aliceblue;
+  padding: 10px;
+  font-size: 2rem;
+}
+.titulo1{
+  background-color: rgb(233, 35, 0);
+  color: aliceblue;
+  padding: 10px;
+  font-size: 2rem;
+}

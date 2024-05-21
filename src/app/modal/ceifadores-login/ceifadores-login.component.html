@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>Olá Ceifador!!!</h2>
+    <h2>Borá trabalhar</h2>
+    <div>
+        <img class="img-fluid img-thubnail" src="../../../assets/morteFoice.gif" alt="morte com a foice">
+    </div>
+    <h3>Precisamos saber quem é você?</h3>
+    <div class="linhaBotao">
+        <button mat-fab-button class="btn btn-lg btnWill" [ngClass]="{btnWill:btnWill , clicked:clicked}" *ngIf="btnWill" (click)="loginUsuario('willians')">Willians</button>
+        <button mat-fab-button class="btn btn-lg btnIza" [ngClass]="{btnIza:btnIza , clicked:clicked}" *ngIf="btnIza"  (click)="loginUsuario('Izadora')">Izadora</button>
+    </div>
+    <P for="senhaTexto">Por Obsequio, Sir ou Lady Informe a senha</P>
+    <form [formGroup]="myForm">
+        <input matInput placeholder="Informe a sua senha" formControlName="senhaCeifadores">
+    <button class="btn btn-lg btn-success" type="submit" (click)="logar()">Logar</button>
+</form>
+</div>
