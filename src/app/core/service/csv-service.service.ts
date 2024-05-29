@@ -7,26 +7,26 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CsvService {
-public urlFile = "http://localhost:8080/api/manipuladordados.php";
-// public urlFile = "https://trezentosdemil.achei.digital//api/manipuladordados.php";
-constructor(private http: HttpClient) { }
-   saveCSVPHP(arquivo: any){
+  //public urlFile = "http://localhost:8080/api/manipuladordados.php";
+  public urlFile = "https://trezentosdemil.achei.digital//api/manipuladordados.php";
+  constructor(private http: HttpClient) { }
+  saveCSVPHP(arquivo: any) {
     const headers = new HttpHeaders({
       'Content-Type': 'text/csv',
-      'Access-Control-Allow-Origin':"*"
-        });
-    
-    const csv =     this.convertToCsv(arquivo);
+      'Access-Control-Allow-Origin': "*"
+    });
+
+    const csv = this.convertToCsv(arquivo);
     const formData: FormData = new FormData();
     const blob = new Blob([csv], { type: 'text/csv' });
-    
+
     formData.append('file', blob, "pagamentos.CSV");
-    return this.http.post(this.urlFile,blob)
+    return this.http.post(this.urlFile, blob)
   }
   readCsvFileLineByLine(): Observable<any> {
-     return new Observable<any>(observer => {
+    return new Observable<any>(observer => {
       this.http.get(this.urlFile).subscribe(
-        (fileContent: any) => {            
+        (fileContent: any) => {
           Papa.parse(fileContent.data, {
             delimiter: ';',
             header: true,
@@ -45,7 +45,7 @@ constructor(private http: HttpClient) { }
 
   private convertToCsv(data: any[]): string {
     console.log(data);
-    
+
     const csvRows = [];
     const headers = Object.keys(data[0]);
     csvRows.push(headers.join(';'));
@@ -54,7 +54,7 @@ constructor(private http: HttpClient) { }
       const values = headers.map(header => row[header]);
       csvRows.push(values.join(';'));
     }
-    
+
     return csvRows.join('\r\n');
   }
 }
